@@ -5,14 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foursquare Game</title>
     <link rel="stylesheet" href="stylesindex.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <meta name="description" content="Learn about Foursquare, a strategic outdoor ball game. Join our community and start playing today!">
+    <meta name="keywords" content="Foursquare, ball game, outdoor game, strategic game, community">
+    <meta name="author" content="Foursquare Community">
+    <meta name="robots" content="index, follow">
     <meta property="og:title" content="Foursquare Game">
     <meta property="og:description" content="Learn about Foursquare, a strategic outdoor ball game. Join our community and start playing today!">
     <meta property="og:image" content="placeholder1.jpeg">
     <meta property="og:url" content="http://yourwebsite.com">
     <meta name="twitter:card" content="summary_large_image">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1355624267955825"
-        crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1355624267955825" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            background: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav button {
+            background: #ff8a00;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav button:hover {
+            background: #e52e71;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #e52e71;
+            border-bottom: 2px solid #ff8a00;
+            display: inline-block;
+        }
+
+        .typing-effect {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .15em solid orange;
+            animation: typing 4s steps(40, end) forwards, blink-caret .75s step-end infinite;
+        }
+
+        section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .gallery-image {
+            max-width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+
+        .finished-typing {
+            border-right: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,7 +130,7 @@
     <main>
         <section>
             <h2>About Foursquare</h2>
-            <p>Foursquare is a strategic outdoor ball game played by four players in a square court. The objective is to eliminate players in higher areas by bouncing the ball in their section without them returning it. The player in the highest area serves the ball to start the game.</p>
+            <p id="about-text" class="typing-effect">Foursquare is a strategic outdoor ball game played by four players in a square court. The objective is to eliminate players in higher areas by bouncing the ball in their section without them returning it. The player in the highest area serves the ball to start the game.</p>
             <!-- Placeholder images -->
             <div class="image-gallery">
                 <img src="placeholder1.jpeg" alt="Players enjoying a game of Foursquare" class="gallery-image">
@@ -36,5 +139,15 @@
             </div>
         </section>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutText = document.getElementById('about-text');
+            aboutText.addEventListener('animationend', function() {
+                aboutText.classList.remove('typing-effect');
+                aboutText.classList.add('finished-typing');
+            });
+        });
+    </script>
 </body>
 </html>
